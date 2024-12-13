@@ -1,0 +1,52 @@
+size 800 480
+camera 2 2 0 1 0 -4 0 1 0 45
+output main.png
+
+maxdepth 20
+
+anti_aliasing true
+samples_per_pixel 100
+
+use_bvh false
+
+gamma_correction false
+
+#------------------------------------------
+directional 0 1 1 0.6 0.6 0.6
+
+# the earth
+# diffuse 0.27 0.9921 0.1725
+texture checker 0 1 0 1 1 1 1
+sphere 0 -50 0 48.3
+# diffuse 0 0 0
+texture null
+
+# sphere center
+specular .8 .8 .8
+shininess 1
+fuzziness 0.1
+sphere 0 -1.2 -7 1
+specular 0 0 0
+fuzziness 0
+shininess 0
+
+
+# sphere right
+# diffuse 0.98 0.62 0.15
+texture image
+sphere 2.5 -1 -7 1.2
+texture null
+# diffuse 0 0 0
+
+# sphere left
+dielectric_idx 2.5
+sphere -3 -0.7 -7 1.5
+dielectric_idx 0
+
+diffuse 0.5 0.5 0.2
+sphereMoving 2.0 -1.6 -5 2.6 -1.6 -5 0.4
+diffuse 0 0 0
+
+diffuse 1 0.5 0.38
+sphereMoving -2.0 -1.6 -5 -2.4 -1.6 -5 0.4
+diffuse 0 0 0
